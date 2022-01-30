@@ -2,17 +2,15 @@
 #include "Communication.h"
 #include "Plotter.h"
 
-Stepper s(A0,A1,A2,A3);
-Stepper s2(9,10,11,12);
+Stepper s(2,3,4,5);
+Stepper s2(A0,A1,A2,A3);
 Plotter p(s, s2);
-Communicator c(2, 3);
+Communicator c;//pins 8(RX),9(TX), locks PWM on 10
 
 void setup() {
   s.init();
   s2.init();
-  
-  Serial.begin(9600);
-  Serial.println("WAITING"); 
+
   c.init();
   p.init();
 }

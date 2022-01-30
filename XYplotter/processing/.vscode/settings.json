@@ -1,0 +1,16 @@
+{
+  "files.associations": {
+    "istream": "cpp",
+    "algorithm": "cpp",
+    "vector": "cpp",
+    "iosfwd": "cpp",
+    "xstring": "cpp",
+    "deque": "cpp",
+    "memory": "cpp",
+    "queue": "cpp",
+    "system_error": "cpp",
+    "tuple": "cpp",
+    "utility": "cpp",
+    "xutility": "cpp"
+  }
+}

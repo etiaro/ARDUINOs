@@ -3,10 +3,10 @@
 class Plotter{
 private:
   Stepper s1, s2;
-  long len1, len2; //TODO use this
+  long len1, len2; 
   void moveTogether(long steps1, long steps2, bool backwards1, bool backwards2){
     if(steps1 == 0 && steps2 == 0){
-      Serial.println("nothing to move");
+      // nothing to move
     }else if(steps1 == 0){
       for(long step = 0; step < steps2; step++){
         s2.step(backwards2);
@@ -53,8 +53,6 @@ public:
     len2 |= EEPROM.read(6);
     len2 <<=8;
     len2 |= EEPROM.read(7);
-    Serial.println(len1);
-    Serial.println(len2);
   }
   void savePosition(){
     EEPROM.write(0, (len1>>24) % (1<<8));
