@@ -30,7 +30,6 @@ public:
   Communicator() : queueSize(0) {}
   void init(){
     BT.begin(9600);
-    Serial.begin(9600);
   }
   void sendDone(){
     queueSize++;
@@ -108,16 +107,6 @@ public:
     if(!tmp2.success) return forceReadMessage();
     byte rXOR = tmp2.value;
     if(rXOR != ctrl){
-      Serial.print(ctrl);
-      Serial.print(' ');
-      Serial.print(rXOR);
-      Serial.print(' ');
-      Serial.print(m.kind);
-      Serial.print(' ');
-      Serial.print(m.len1);
-      Serial.print(' ');
-      Serial.print(m.len2);
-      Serial.print('\n');
       sendFail();
       return forceReadMessage();
     }
